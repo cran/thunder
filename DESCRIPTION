@@ -1,0 +1,37 @@
+Package: thunder
+Type: Package
+Title: Computation and Visualisation of Atmospheric Convective
+        Parameters
+Version: 0.0.12
+Authors@R: c(person("Bartosz", "Czernecki", email = "nwp@amu.edu.pl", role = c("aut", "cre"),comment = c(ORCID = "0000-0001-6496-1386")),
+    person("Piotr", "Szuster", email = "retsuz@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0001-7937-8046")),
+    person("Mateusz", "Taszarek", email = "mateusz.taszarek@noaa.gov", role = c("aut"), 
+    comment = c(ORCID = "0000-0001-9578-5872")),
+    person("Doug", "Nychka", role = c("ctb")),
+    person("Eric", "Gilleland", role = c("ctb")),
+    person("Liangying", "Zhang", role = c("ctb")),
+    person("Tim", "Hoar", role = c("ctb")))
+Maintainer: Bartosz Czernecki <nwp@amu.edu.pl>
+Description: R tool for calculating over 100 atmospheric convection indices from rawinsonde profiles.
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.12.9.4), climate, dplyr, aiRthermo
+Depends: R (>= 3.5.0)
+Suggests: RadioSonde, knitr, rmarkdown, testthat (>= 2.0.0), covr
+LinkingTo: Rcpp
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+URL: https://bczernecki.github.io/thundeR/
+BugReports: https://github.com/bczernecki/thunder/issues/
+VignetteBuilder: knitr
+Config/testthat/edition: 2
+NeedsCompilation: yes
+Packaged: 2021-03-17 00:06:02 UTC; bartosz
+Author: Bartosz Czernecki [aut, cre] (<https://orcid.org/0000-0001-6496-1386>),
+  Piotr Szuster [aut] (<https://orcid.org/0000-0001-7937-8046>),
+  Mateusz Taszarek [aut] (<https://orcid.org/0000-0001-9578-5872>),
+  Doug Nychka [ctb],
+  Eric Gilleland [ctb],
+  Liangying Zhang [ctb],
+  Tim Hoar [ctb]
+Repository: CRAN
+Date/Publication: 2021-03-18 10:10:02 UTC
