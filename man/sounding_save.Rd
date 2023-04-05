@@ -13,6 +13,10 @@ sounding_save(
   ws,
   title = "",
   parcel = "MU",
+  max_speed = 25,
+  buoyancy_polygon = TRUE,
+  SRH_polygon = "03km",
+  DCAPE = FALSE,
   filename,
   ...
 )
@@ -32,14 +36,22 @@ sounding_save(
 
 \item{title}{title to be added in the layout's header}
 
-\item{parcel}{parcel tracing on Skew-T for "MU", "ML" or "SB" parcel}
+\item{parcel}{parcel tracing on Skew-T for "MU", "ML" or "SB" parcel, "none" for no parcel line.}
+
+\item{max_speed}{range of the hodograph to be drawn, 25 m/s used as default}
+
+\item{buoyancy_polygon}{logical, plotting area of parcel's positive (yellow) or negative (red) buoyancy (default  = TRUE)}
+
+\item{SRH_polygon}{draws polygon for storm-relative helicity, available options are "0500m", "01km", "03km", "36km", "none", "03km" used as default}
+
+\item{DCAPE}{draws downdraft parcel and polygon of downdraft's negative buoyancy (default = FALSE)}
 
 \item{filename}{output file name with extension indicating file format (e.g. "my_plot.png" or "my_plot.svg")}
 
 \item{...}{other arguments that can be used with `sounding_plot` or other graphic arguments}
 }
 \value{
-graphical file with Skew-T and hodograph layout
+graphical file with Skew-T and hodograph on a single layout
 }
 \description{
 Auxiliary function to `sounding_plot` that plots a composite \
@@ -50,9 +62,9 @@ on a single layout and saves as graphical file.
 \donttest{
 data("sounding_vienna")
 attach(sounding_vienna)
-# sounding_save(filename = "Vienna.png", 
-#              pressure, altitude, temp, dpt, wd, ws, parcel = "MU", 
-#              title = "Vienna - 23 August 2011, 12:00 UTC")
+sounding_save(filename = tempfile(), 
+             pressure, altitude, temp, dpt, wd, ws, parcel = "MU", 
+             title = "Vienna - 23 August 2011, 12:00 UTC")
 } 
 
 }
