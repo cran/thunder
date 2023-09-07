@@ -1,8 +1,8 @@
-83bc216a7613852de3f6a652f32948ab *DESCRIPTION
+72e789128f340ad718f608a6a5d8bae3 *DESCRIPTION
 a803153a82a5fa8f33dc5b3383407620 *NAMESPACE
-cff68588464a4bbbc42d40566d663509 *NEWS.md
+91c7df85cba55a20ca6d328dd3d74e80 *NEWS.md
 b94acf7b4b54b0a4b073f3db824534b3 *R/RcppExports.R
-8579cfa475c983b4fcd4ade7949ae108 *R/get_sounding.R
+1a4636dfde47f6799ec773eabca43577 *R/get_sounding.R
 c559b9253b870fff817231de2d6b2a56 *R/has_internet.R
 08a49b41c8cf96bcadb401f68c1d831f *R/northplatte.R
 a38d5cccc7f88bea23f2f12711579b16 *R/radiosonde_utils.R
@@ -26,7 +26,7 @@ e7313f6fb025bd22c1cc5de32f770a41 *README.md
 c7e15447ee4b9ed0c41c8ac490abe3c1 *inst/WORDLIST
 17767b1f45a2a8ea69a5f42019b7eb19 *inst/doc/convective-parameters-and-technical-details.R
 f373ee8d0f234ee0312b724db6a74fe6 *inst/doc/convective-parameters-and-technical-details.Rmd
-00d138ec454440a53a83dfb67c03b0b2 *inst/doc/convective-parameters-and-technical-details.html
+aa389172d6ed874379052024585e0ee9 *inst/doc/convective-parameters-and-technical-details.html
 1d2b52a537d65c5e5e060216fdd220d7 *inst/doc/getstarted.R
 ba302a3d5cfed681f4f9cf7c1cadd3f3 *inst/doc/getstarted.Rmd
 9f53602337aebb921d4907c24956bc19 *inst/doc/getstarted.html
@@ -56,7 +56,7 @@ b5a8cdb48b21860bc7634c04e0a63ea4 *man/sounding_vienna.Rd
 b231e7c9e9ab0e24ec0f5b6e0a07adae *src/RcppExports.cpp
 f4beab90d9cd18d4614c62377e49800a *src/main.cpp
 d9d6cfb554f138c950e91b4bb43b37c0 *tests/testthat.R
-e2ca0e1689c2d9442c18a2e824af8b1a *tests/testthat/test-get_sounding.R
+cc78aead613629e45a56c2fadf5568b6 *tests/testthat/test-get_sounding.R
 ba4f17f52ee67c20346e907d0d6aa5c2 *tests/testthat/test-sounding_compute.R
 56c4dc78181f9dd51d0bc7d86f886644 *tests/testthat/test-sounding_default.R
 88a0de09bcb094f9c514032f7d012a01 *tests/testthat/test-sounding_plot.R
