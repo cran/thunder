@@ -1,6 +1,6 @@
-72e789128f340ad718f608a6a5d8bae3 *DESCRIPTION
+060d49e0d0a925f4058f62bcf4b7d26c *DESCRIPTION
 a803153a82a5fa8f33dc5b3383407620 *NAMESPACE
-91c7df85cba55a20ca6d328dd3d74e80 *NEWS.md
+f69107c4b213f03e8f639e6cb2b938e7 *NEWS.md
 b94acf7b4b54b0a4b073f3db824534b3 *R/RcppExports.R
 1a4636dfde47f6799ec773eabca43577 *R/get_sounding.R
 c559b9253b870fff817231de2d6b2a56 *R/has_internet.R
@@ -26,7 +26,7 @@ e7313f6fb025bd22c1cc5de32f770a41 *README.md
 c7e15447ee4b9ed0c41c8ac490abe3c1 *inst/WORDLIST
 17767b1f45a2a8ea69a5f42019b7eb19 *inst/doc/convective-parameters-and-technical-details.R
 f373ee8d0f234ee0312b724db6a74fe6 *inst/doc/convective-parameters-and-technical-details.Rmd
-aa389172d6ed874379052024585e0ee9 *inst/doc/convective-parameters-and-technical-details.html
+3dbc10ae1b6d7cd6bb5aa1482240a154 *inst/doc/convective-parameters-and-technical-details.html
 1d2b52a537d65c5e5e060216fdd220d7 *inst/doc/getstarted.R
 ba302a3d5cfed681f4f9cf7c1cadd3f3 *inst/doc/getstarted.Rmd
 9f53602337aebb921d4907c24956bc19 *inst/doc/getstarted.html
@@ -56,9 +56,9 @@ b5a8cdb48b21860bc7634c04e0a63ea4 *man/sounding_vienna.Rd
 b231e7c9e9ab0e24ec0f5b6e0a07adae *src/RcppExports.cpp
 f4beab90d9cd18d4614c62377e49800a *src/main.cpp
 d9d6cfb554f138c950e91b4bb43b37c0 *tests/testthat.R
-cc78aead613629e45a56c2fadf5568b6 *tests/testthat/test-get_sounding.R
-ba4f17f52ee67c20346e907d0d6aa5c2 *tests/testthat/test-sounding_compute.R
-56c4dc78181f9dd51d0bc7d86f886644 *tests/testthat/test-sounding_default.R
+a133587d5c26b4eb4b802f582ed585fe *tests/testthat/test-get_sounding.R
+c0b6c28490d6cbbbbbc97faef0852953 *tests/testthat/test-sounding_compute.R
+64b8eb7d463f1af3e662bf0140561e7e *tests/testthat/test-sounding_default.R
 88a0de09bcb094f9c514032f7d012a01 *tests/testthat/test-sounding_plot.R
 94975d79a95c70d58aaa6c13ecaae125 *tests/testthat/test-sounding_save.R
 01b5098619b5befa01ae8760f95c4627 *tests/testthat/test-sounding_wind.R
