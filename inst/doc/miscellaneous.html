@@ -15,7 +15,7 @@
 
 <title>Miscellaneous</title>
 
-<script src="miscellaneous_files/header-attrs-2.21/header-attrs.js"></script>
+<script src="miscellaneous_files/header-attrs-2.29/header-attrs.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -38,7 +38,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -75,7 +75,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -88,7 +88,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="/Library/Frameworks/R.framework/Versions/4.2/Resources/library/rmarkdown/rmarkdown/templates/html_vignette/resources/vignette.css" type="text/css" />
+<link rel="stylesheet" href="/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rmarkdown/rmarkdown/templates/html_vignette/resources/vignette.css" type="text/css" />
 
 
 
@@ -147,44 +147,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <h1 class="title toc-ignore">Miscellaneous</h1>
-<h4 class="author">Bartosz Czernecki, Mateusz Taszarek, Piotr Szuster</h4>
+<h4 class="author">Bartosz Czernecki, Mateusz Taszarek, Piotr
+Szuster</h4>
 
 
 
 <div id="customized-skew-t-plot" class="section level3">
 <h3>Customized Skew-T plot:</h3>
-<p>Download sounding and draw customized Skew-T plot (e.g. up to 150 hPa instead of default 100 hPa) with changed line width and color stripes for temperature:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(thunder)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>northplatte <span class="ot">=</span> <span class="fu">get_sounding</span>(<span class="at">wmo_id =</span> <span class="dv">72562</span>, <span class="at">yy =</span> <span class="dv">1999</span>, <span class="at">mm =</span> <span class="dv">7</span>, <span class="at">dd =</span> <span class="dv">3</span>, <span class="at">hh =</span> <span class="dv">00</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">skewt_plot</span>(<span class="at">ptop =</span> <span class="dv">150</span>, <span class="at">close_par =</span> <span class="cn">FALSE</span>, <span class="at">temp_stripes =</span> <span class="cn">TRUE</span>, <span class="at">deg45 =</span> <span class="cn">TRUE</span>, <span class="at">mixing_ratio_col =</span> <span class="st">&quot;pink&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">skewt_lines</span>(northplatte<span class="sc">$</span>temp, northplatte<span class="sc">$</span>pressure, <span class="at">ptop =</span> <span class="dv">150</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">skewt_lines</span>(northplatte<span class="sc">$</span>dpt, northplatte<span class="sc">$</span>pressure, <span class="at">ptop =</span> <span class="dv">150</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Skew-T customized&quot;</span>)</span></code></pre></div>
-<p><img src="miscellaneous_files/figure-html/skewt_customized-1.png" /><!-- --></p>
+<p>Download sounding and draw customized Skew-T plot (e.g. up to 150 hPa
+instead of default 100 hPa) with changed line width and color stripes
+for temperature:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(thunder)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>northplatte <span class="ot">=</span> <span class="fu">get_sounding</span>(<span class="at">wmo_id =</span> <span class="dv">72562</span>, <span class="at">yy =</span> <span class="dv">1999</span>, <span class="at">mm =</span> <span class="dv">7</span>, <span class="at">dd =</span> <span class="dv">3</span>, <span class="at">hh =</span> <span class="dv">00</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">skewt_plot</span>(<span class="at">ptop =</span> <span class="dv">150</span>, <span class="at">close_par =</span> <span class="cn">FALSE</span>, <span class="at">temp_stripes =</span> <span class="cn">TRUE</span>, <span class="at">deg45 =</span> <span class="cn">TRUE</span>, <span class="at">mixing_ratio_col =</span> <span class="st">&quot;pink&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">skewt_lines</span>(northplatte<span class="sc">$</span>temp, northplatte<span class="sc">$</span>pressure, <span class="at">ptop =</span> <span class="dv">150</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="fu">skewt_lines</span>(northplatte<span class="sc">$</span>dpt, northplatte<span class="sc">$</span>pressure, <span class="at">ptop =</span> <span class="dv">150</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;Skew-T customized&quot;</span>)</span></code></pre></div>
+<p><img
+src="miscellaneous_files/figure-html/skewt_customized-1.png" /><!-- --></p>
 </div>
-<div id="wind-speed-vertical-profile-with-wind-barbs" class="section level3">
+<div id="wind-speed-vertical-profile-with-wind-barbs"
+class="section level3">
 <h3>Wind speed vertical profile with wind barbs:</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>northplatte <span class="ot">=</span> <span class="fu">get_sounding</span>(<span class="at">wmo_id =</span> <span class="dv">72562</span>, <span class="at">yy =</span> <span class="dv">1999</span>, <span class="at">mm =</span> <span class="dv">7</span>, <span class="at">dd =</span> <span class="dv">3</span>, <span class="at">hh =</span> <span class="dv">00</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">fig =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.75</span>, <span class="fl">0.15</span>, <span class="fl">0.9</span>), <span class="at">new =</span> <span class="cn">TRUE</span>, <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_wind</span>(<span class="at">pressure =</span> northplatte<span class="sc">$</span>pressure, <span class="at">ws =</span> northplatte<span class="sc">$</span>ws, <span class="at">yaxs =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;North Platte - 3 July 1999 0000 UTC&quot;</span>, <span class="at">outer =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">fig =</span> <span class="fu">c</span>(<span class="fl">0.65</span>, <span class="fl">0.95</span>, <span class="fl">0.15</span>, <span class="fl">0.9</span>), <span class="at">new =</span> <span class="cn">TRUE</span>, <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_barbs</span>(northplatte<span class="sc">$</span>pressure, northplatte<span class="sc">$</span>ws, northplatte<span class="sc">$</span>wd, northplatte<span class="sc">$</span>altitude, <span class="at">interpolate =</span> <span class="cn">FALSE</span>, <span class="at">barb_cex =</span> <span class="dv">1</span>)</span></code></pre></div>
-<p><img src="miscellaneous_files/figure-html/wind_speed_vertical_profile-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>northplatte <span class="ot">=</span> <span class="fu">get_sounding</span>(<span class="at">wmo_id =</span> <span class="dv">72562</span>, <span class="at">yy =</span> <span class="dv">1999</span>, <span class="at">mm =</span> <span class="dv">7</span>, <span class="at">dd =</span> <span class="dv">3</span>, <span class="at">hh =</span> <span class="dv">00</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">fig =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.75</span>, <span class="fl">0.15</span>, <span class="fl">0.9</span>), <span class="at">new =</span> <span class="cn">TRUE</span>, <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">sounding_wind</span>(<span class="at">pressure =</span> northplatte<span class="sc">$</span>pressure, <span class="at">ws =</span> northplatte<span class="sc">$</span>ws, <span class="at">yaxs =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;North Platte - 3 July 1999 0000 UTC&quot;</span>, <span class="at">outer =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">par</span>(<span class="at">fig =</span> <span class="fu">c</span>(<span class="fl">0.65</span>, <span class="fl">0.95</span>, <span class="fl">0.15</span>, <span class="fl">0.9</span>), <span class="at">new =</span> <span class="cn">TRUE</span>, <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="at">oma =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="fu">sounding_barbs</span>(northplatte<span class="sc">$</span>pressure, northplatte<span class="sc">$</span>ws, northplatte<span class="sc">$</span>wd, northplatte<span class="sc">$</span>altitude, <span class="at">interpolate =</span> <span class="cn">FALSE</span>, <span class="at">barb_cex =</span> <span class="dv">1</span>)</span></code></pre></div>
+<p><img
+src="miscellaneous_files/figure-html/wind_speed_vertical_profile-1.png" /><!-- --></p>
 </div>
 <div id="hodograph-with-storm-motion" class="section level3">
 <h3>Hodograph with storm motion</h3>
-<p>It is possible to define its own <code>storm_motion</code> parameters in order to visualise and/or compute parameters for cells moving with pre-defined direction and speed. The below example shows customized hodograph for thunderstorm cell moving with the speed of 15 m/s and 180 degree direction.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;northplatte&quot;</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_hodograph</span>(<span class="at">ws =</span> northplatte<span class="sc">$</span>ws,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">wd =</span> northplatte<span class="sc">$</span>wd, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">altitude =</span> northplatte<span class="sc">$</span>altitude,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">max_speed =</span> <span class="dv">38</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">SRH_polygon =</span> <span class="st">&quot;03km_RM&quot;</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">storm_motion =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">180</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;North Platte - 10 May 2001, 00:00 UTC&quot;</span>)</span></code></pre></div>
-<p><img src="miscellaneous_files/figure-html/hodo_customized-1.png" /><!-- --></p>
+<p>It is possible to define its own <code>storm_motion</code> parameters
+in order to visualise and/or compute parameters for cells moving with
+pre-defined direction and speed. The below example shows customized
+hodograph for thunderstorm cell moving with the speed of 15 m/s and 180
+degree direction.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;northplatte&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">sounding_hodograph</span>(<span class="at">ws =</span> northplatte<span class="sc">$</span>ws,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>                   <span class="at">wd =</span> northplatte<span class="sc">$</span>wd, </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>                   <span class="at">altitude =</span> northplatte<span class="sc">$</span>altitude,</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>                   <span class="at">max_speed =</span> <span class="dv">38</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>                   <span class="at">SRH_polygon =</span> <span class="st">&quot;03km_RM&quot;</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>                   <span class="at">storm_motion =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">180</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;North Platte - 10 May 2001, 00:00 UTC&quot;</span>)</span></code></pre></div>
+<p><img
+src="miscellaneous_files/figure-html/hodo_customized-1.png" /><!-- --></p>
 </div>
 
 

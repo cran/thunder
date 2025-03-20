@@ -15,7 +15,7 @@
 
 <title>Introduction to the thundeR package</title>
 
-<script src="getstarted_files/header-attrs-2.21/header-attrs.js"></script>
+<script src="getstarted_files/header-attrs-2.29/header-attrs.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -38,7 +38,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -75,7 +75,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -88,7 +88,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<link rel="stylesheet" href="/Library/Frameworks/R.framework/Versions/4.2/Resources/library/rmarkdown/rmarkdown/templates/html_vignette/resources/vignette.css" type="text/css" />
+<link rel="stylesheet" href="/Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/library/rmarkdown/rmarkdown/templates/html_vignette/resources/vignette.css" type="text/css" />
 
 
 
@@ -147,264 +147,302 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <h1 class="title toc-ignore">Introduction to the thundeR package</h1>
-<h4 class="author">Bartosz Czernecki, Mateusz Taszarek, Piotr Szuster</h4>
+<h4 class="author">Bartosz Czernecki, Mateusz Taszarek, Piotr
+Szuster</h4>
 
 
 
 <div id="thunder" class="section level1">
-<h1>thundeR <img src="https://github.com/bczernecki/thundeR/raw/master/man/figures/logo.png" style="float:right" width="150"/></h1>
-<p><strong><code>thundeR</code></strong> is a freeware R package and collection of functions for rapid computation and visualisation of convective parameters commonly used in the operational forecasting of severe convective storms. Core algorithm is based on C++ code implemented into R language via <code>Rcpp</code>. This solution allows to compute over 200 thermodynamic and kinematic parameters in less than 0.02s per profile and process large datasets such as reanalyses or operational NWP models in a reasonable amount of time. Package has been developed since 2017 by research meteorologists specializing in severe convective storms and is constantly updated with new features.</p>
+<h1>thundeR
+<img src="https://github.com/bczernecki/thundeR/raw/master/man/figures/logo.png" style="float:right" width="150"/></h1>
+<p><strong><code>thundeR</code></strong> is a freeware R package and
+collection of functions for rapid computation and visualisation of
+convective parameters commonly used in the operational forecasting of
+severe convective storms. Core algorithm is based on C++ code
+implemented into R language via <code>Rcpp</code>. This solution allows
+to compute over 200 thermodynamic and kinematic parameters in less than
+0.02s per profile and process large datasets such as reanalyses or
+operational NWP models in a reasonable amount of time. Package has been
+developed since 2017 by research meteorologists specializing in severe
+convective storms and is constantly updated with new features.</p>
 <div id="online-browser" class="section level2">
 <h2>Online browser:</h2>
-<p>Online rawinsonde browser of <code>thundeR</code> package is available at <a href="http://rawinsonde.com" class="uri">http://rawinsonde.com</a></p>
+<p>Online rawinsonde browser of <code>thundeR</code> package is
+available at <a href="http://rawinsonde.com"
+class="uri">http://rawinsonde.com</a></p>
 </div>
 <div id="main-functions" class="section level2">
 <h2>Main functions:</h2>
 <ul>
-<li><p><strong><code>sounding_compute()</code></strong> - A core function for calculating convective parameters commonly used in the operational prediction of severe convective storms. Returns a vector of parameters.</p></li>
-<li><p><strong><code>sounding_plot()</code></strong> - Function to plot a composite of Skew-T, hodograph and selected convective parameters on a single layout</p></li>
-<li><p><strong><code>sounding_save()</code></strong><code>- Auxiliary function to</code>sounding_plot` that plots a composite of Skew-T, hodograph and selected convective parameters on a single layout and exports graphical file.</p></li>
-<li><p><strong><code>get_sounding()</code></strong> - Download rawinsonde measurement from sounding database of the University of Wyoming in a form convenient to use with <code>thundeR</code> package.</p></li>
+<li><p><strong><code>sounding_compute()</code></strong> - A core
+function for calculating convective parameters commonly used in the
+operational prediction of severe convective storms. Returns a vector of
+parameters.</p></li>
+<li><p><strong><code>sounding_plot()</code></strong> - Function to plot
+a composite of Skew-T, hodograph and selected convective parameters on a
+single layout</p></li>
+<li><p><strong><code>sounding_save()</code></strong><code>- Auxiliary function to</code>sounding_plot`
+that plots a composite of Skew-T, hodograph and selected convective
+parameters on a single layout and exports graphical file.</p></li>
+<li><p><strong><code>get_sounding()</code></strong> - Download
+rawinsonde measurement from sounding database of the University of
+Wyoming in a form convenient to use with <code>thundeR</code>
+package.</p></li>
 </ul>
 </div>
 <div id="examples" class="section level2">
 <h2>Examples</h2>
-<p>Examples show aplication of selected <code>thundeR</code> package functions</p>
+<p>Examples show aplication of selected <code>thundeR</code> package
+functions</p>
 <div id="example-1" class="section level3">
 <h3>Example 1</h3>
-<p>Draw Skew-T, hodograph and convective parameters on a single layout and export to png file:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(thunder)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;sounding_vienna&quot;</span>) <span class="co"># load example dataset (Vienna rawinsonde profile for 23 Aug 2011 12UTC):</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pressure <span class="ot">=</span> sounding_vienna<span class="sc">$</span>pressure <span class="co"># vector of pressure [hPa]</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>altitude <span class="ot">=</span> sounding_vienna<span class="sc">$</span>altitude <span class="co"># vector of altitude [meters]</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">=</span> sounding_vienna<span class="sc">$</span>temp  <span class="co"># vector of temperature [degree Celsius]</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dpt <span class="ot">=</span> sounding_vienna<span class="sc">$</span>dpt <span class="co"># vector of dew point temperature [degree Celsius]</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">=</span> sounding_vienna<span class="sc">$</span>wd <span class="co"># vector of wind direction [azimuth in degrees]</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ws <span class="ot">=</span> sounding_vienna<span class="sc">$</span>ws <span class="co"># vector of wind speed [knots]</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_save</span>(<span class="at">filename =</span> <span class="st">&quot;Vienna.png&quot;</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;Vienna - 23 August 2011 1200 UTC&quot;</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>              pressure, altitude, temp, dpt, wd, ws)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Your display device is 10 x 6 in. </span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; It is recommended to use at least 10 x 7.5 in. plotting window </span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; or consider saving the layout into file</span></span></code></pre></div>
+<p>Draw Skew-T, hodograph and convective parameters on a single layout
+and export to png file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(thunder)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;sounding_vienna&quot;</span>) <span class="co"># load example dataset (Vienna rawinsonde profile for 23 Aug 2011 12UTC):</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>pressure <span class="ot">=</span> sounding_vienna<span class="sc">$</span>pressure <span class="co"># vector of pressure [hPa]</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>altitude <span class="ot">=</span> sounding_vienna<span class="sc">$</span>altitude <span class="co"># vector of altitude [meters]</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>temp <span class="ot">=</span> sounding_vienna<span class="sc">$</span>temp  <span class="co"># vector of temperature [degree Celsius]</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>dpt <span class="ot">=</span> sounding_vienna<span class="sc">$</span>dpt <span class="co"># vector of dew point temperature [degree Celsius]</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>wd <span class="ot">=</span> sounding_vienna<span class="sc">$</span>wd <span class="co"># vector of wind direction [azimuth in degrees]</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>ws <span class="ot">=</span> sounding_vienna<span class="sc">$</span>ws <span class="co"># vector of wind speed [knots]</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="fu">sounding_save</span>(<span class="at">filename =</span> <span class="st">&quot;Vienna.png&quot;</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">&quot;Vienna - 23 August 2011 1200 UTC&quot;</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>              pressure, altitude, temp, dpt, wd, ws)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co">#&gt; Your display device is 10 x 6 in. </span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#&gt; It is recommended to use at least 10 x 7.5 in. plotting window </span></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="co">#&gt; or consider saving the layout into file</span></span></code></pre></div>
 <p><img src="https://github.com/bczernecki/thundeR/raw/master/inst/figures/Vienna.png" alt="Vienna" width="1000"/></p>
 </div>
 <div id="example-2" class="section level3">
 <h3>Example 2</h3>
-<p>Download North Platte rawinsonde profile for 03 Jul 1999 00UTC and export to png file:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>profile <span class="ot">=</span> <span class="fu">get_sounding</span>(<span class="at">wmo_id =</span> <span class="dv">72562</span>, <span class="at">yy =</span> <span class="dv">1999</span>, <span class="at">mm =</span> <span class="dv">7</span>, <span class="at">dd =</span> <span class="dv">3</span>, <span class="at">hh =</span> <span class="dv">0</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(profile) <span class="co"># show first few rows of downloaded dataset</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   pressure altitude temp  dpt  wd ws</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    972.0      287 24.0 13.0 130 12</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    970.0      305 24.1 12.8 130 13</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4    964.0      359 24.2 12.2 134 16</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5    936.6      610 22.2 11.6 150 31</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6    925.0      718 21.4 11.4 150 32</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 7    904.1      914 19.9 10.2 160 33</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_save</span>(<span class="at">filename =</span> <span class="st">&quot;NorthPlatte.png&quot;</span>, <span class="at">title =</span> <span class="st">&quot;North Platte - 03 July 1999 0000 UTC&quot;</span>, profile<span class="sc">$</span>pressure, profile<span class="sc">$</span>altitude, profile<span class="sc">$</span>temp, profile<span class="sc">$</span>dpt, profile<span class="sc">$</span>wd, profile<span class="sc">$</span>ws)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Your display device is 10 x 6 in. </span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; It is recommended to use at least 10 x 7.5 in. plotting window </span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; or consider saving the layout into file</span></span></code></pre></div>
+<p>Download North Platte rawinsonde profile for 03 Jul 1999 00UTC and
+export to png file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>profile <span class="ot">=</span> <span class="fu">get_sounding</span>(<span class="at">wmo_id =</span> <span class="dv">72562</span>, <span class="at">yy =</span> <span class="dv">1999</span>, <span class="at">mm =</span> <span class="dv">7</span>, <span class="at">dd =</span> <span class="dv">3</span>, <span class="at">hh =</span> <span class="dv">0</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">head</span>(profile) <span class="co"># show first few rows of downloaded dataset</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;   pressure altitude temp  dpt  wd ws</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt; 2    972.0      287 24.0 13.0 130 12</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; 3    970.0      305 24.1 12.8 130 13</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; 4    964.0      359 24.2 12.2 134 16</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; 5    936.6      610 22.2 11.6 150 31</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; 6    925.0      718 21.4 11.4 150 32</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; 7    904.1      914 19.9 10.2 160 33</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="fu">sounding_save</span>(<span class="at">filename =</span> <span class="st">&quot;NorthPlatte.png&quot;</span>, <span class="at">title =</span> <span class="st">&quot;North Platte - 03 July 1999 0000 UTC&quot;</span>, profile<span class="sc">$</span>pressure, profile<span class="sc">$</span>altitude, profile<span class="sc">$</span>temp, profile<span class="sc">$</span>dpt, profile<span class="sc">$</span>wd, profile<span class="sc">$</span>ws)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; Your display device is 10 x 6 in. </span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; It is recommended to use at least 10 x 7.5 in. plotting window </span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; or consider saving the layout into file</span></span></code></pre></div>
 <p><img src="https://github.com/bczernecki/thundeR/raw/master/inst/figures/NorthPlatte.png" alt="North Platte" width="1000"/></p>
 </div>
 <div id="example-3" class="section level3">
 <h3>Example 3</h3>
-<p>Compute convective parameters based on a sample vertical profile data:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pressure <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">855</span>, <span class="dv">700</span>, <span class="dv">500</span>, <span class="dv">300</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># pressure [hPa]</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>altitude <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1500</span>, <span class="dv">2500</span>, <span class="dv">6000</span>, <span class="dv">8500</span>, <span class="dv">12000</span>, <span class="dv">25000</span>) <span class="co"># altitude [meters]</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">15</span>, <span class="sc">-</span><span class="dv">30</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="sc">-</span><span class="dv">92</span>) <span class="co"># temperature [degree Celsius]</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>dpt <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">-</span><span class="dv">30</span>, <span class="sc">-</span><span class="dv">55</span>, <span class="sc">-</span><span class="dv">80</span>, <span class="sc">-</span><span class="dv">99</span>) <span class="co"># dew point temperature [degree Celsius]</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">135</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">350</span>, <span class="dv">0</span>) <span class="co"># wind direction [azimuth in degress]</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ws <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">0</span>) <span class="co"># wind speed [knots]</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>accuracy <span class="ot">=</span> <span class="dv">2</span> <span class="co"># accuracy of computations where 3 = high (slow), 2 = medium (recommended), 1 = low (fast)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_compute</span>(pressure, altitude, temp, dpt, wd, ws, accuracy)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              MU_CAPE          MU_CAPE_M10       MU_CAPE_M10_PT </span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       2269.925733301        998.144308627        313.074714966 </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         MU_02km_CAPE         MU_03km_CAPE          MU_HGL_CAPE </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        247.979380820        575.629305978       1616.538411895 </span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               MU_CIN           MU_LCL_HGT           MU_LFC_HGT </span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.000000000        730.000000000        730.000000000 </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            MU_EL_HGT                MU_LI            MU_LI_M10 </span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       8300.000000000        -10.111930240        -10.853947310 </span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              MU_WMAX           MU_EL_TEMP          MU_LCL_TEMP </span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         67.378419888        -28.800000000         17.700000000 </span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          MU_LFC_TEMP              MU_MIXR          MU_CAPE_500 </span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         17.700000000         14.875917910       1076.032178138 </span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      MU_CAPE_500_M10   MU_CAPE_500_M10_PT           MU_CIN_500 </span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        389.365140754        137.081449189          0.000000000 </span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            MU_LI_500        MU_LI_500_M10              SB_CAPE </span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -5.041702392         -6.234631722       2269.925733301 </span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          SB_CAPE_M10       SB_CAPE_M10_PT         SB_02km_CAPE </span></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        998.144308627        313.074714966        247.979380820 </span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         SB_03km_CAPE          SB_HGL_CAPE               SB_CIN </span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        575.629305978       1616.538411895          0.000000000 </span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           SB_LCL_HGT           SB_LFC_HGT            SB_EL_HGT </span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        730.000000000        730.000000000       8300.000000000 </span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                SB_LI            SB_LI_M10              SB_WMAX </span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        -10.111930240        -10.853947310         67.378419888 </span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           SB_EL_TEMP          SB_LCL_TEMP          SB_LFC_TEMP </span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        -28.800000000         17.700000000         17.700000000 </span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              SB_MIXR              ML_CAPE          ML_CAPE_M10 </span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         14.875917910       1646.063927273        670.100095437 </span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       ML_CAPE_M10_PT         ML_02km_CAPE         ML_03km_CAPE </span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        225.281641180        164.079828657        422.429000173 </span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          ML_HGL_CAPE               ML_CIN           ML_LCL_HGT </span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       1250.022127396          0.000000000        975.000000000 </span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           ML_LFC_HGT            ML_EL_HGT                ML_LI </span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        975.000000000       7900.000000000         -7.620329500 </span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            ML_LI_M10              ML_WMAX           ML_EL_TEMP </span></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -8.584526572         57.377067323        -26.400000000 </span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          ML_LCL_TEMP          ML_LFC_TEMP              ML_MIXR </span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         15.250000000         15.250000000         13.048747763 </span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             LR_0500m              LR_01km              LR_02km </span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        -10.000000000        -10.000000000        -10.000000000 </span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              LR_03km              LR_04km              LR_06km </span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -9.047619048         -7.857142857         -6.666666667 </span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              LR_16km              LR_26km              LR_24km </span></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -6.000000000         -5.000000000         -5.767195767 </span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              LR_36km          LR_26km_MAX         LR_500700hPa </span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -4.285714286         -5.714285714         -4.285714286 </span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         LR_500800hPa         LR_600800hPa             FRZG_HGT </span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -5.180722892         -5.833333333       2500.000000000 </span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     FRZG_wetbulb_HGT  HGT_max_thetae_03km  HGT_min_thetae_04km </span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       2275.000000000          0.000000000       3750.000000000 </span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         Delta_thetae Delta_thetae_min04km          Thetae_01km </span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         28.069785504         28.834554624        330.532272184 </span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          Thetae_02km                DCAPE   Cold_Pool_Strength </span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        323.619051941        598.310049405         12.632184321 </span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           Wind_Index           PRCP_WATER   Moisture_Flux_02km </span></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         33.906407176         27.104631918         30.425480722 </span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              RH_01km              RH_02km              RH_14km </span></span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.729103473          0.719706866          0.645204350 </span></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              RH_25km              RH_36km               RH_HGL </span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.555017886          0.443603638          0.460317694 </span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             BS_0500m              BS_01km              BS_02km </span></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          1.917219591          3.834439182          8.782108409 </span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              BS_03km              BS_06km              BS_08km </span></span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         12.655968060         18.005540000         17.407678201 </span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              BS_36km              BS_26km              BS_16km </span></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          9.369289559         13.330420492         16.647826116 </span></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              BS_18km            BS_EFF_MU            BS_EFF_SB </span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         20.279072460         14.223187917         14.223187917 </span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;            BS_EFF_ML        BS_SFC_to_M10        BS_1km_to_M10 </span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         13.896750821         15.510376997         13.649859352 </span></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        BS_2km_to_M10     BS_MU_LFC_to_M10     BS_SB_LFC_to_M10 </span></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          9.883032095         14.073701016         14.073701016 </span></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     BS_ML_LFC_to_M10        BS_MW02_to_SM        BS_MW02_to_RM </span></span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         13.686365658          7.304027597         10.140964728 </span></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        BS_MW02_to_LM         BS_HGL_to_SM         BS_HGL_to_RM </span></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         10.786958453          4.893411960          7.785950290 </span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         BS_HGL_to_LM             MW_0500m              MW_01km </span></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          9.988490342          2.308638103          2.425112273 </span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              MW_02km              MW_03km              MW_06km </span></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          3.347646594          4.800331697          7.810700539 </span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              MW_13km          SRH_100m_RM          SRH_250m_RM </span></span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          6.838886565          4.253473515         10.053664673 </span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          SRH_500m_RM           SRH_1km_RM           SRH_3km_RM </span></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         19.720649935         39.634639574        152.521946573 </span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          SRH_36km_RM          SRH_100m_LM          SRH_250m_LM </span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        236.590130791          1.502688386          3.551808913 </span></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          SRH_500m_LM           SRH_1km_LM           SRH_3km_LM </span></span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          6.967009791         14.002323601        -13.130823085 </span></span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          SRH_36km_LM           SV_500m_RM           SV_01km_RM </span></span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        -24.378976558          0.003904164          0.003879744 </span></span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           SV_03km_RM           SV_500m_LM           SV_01km_LM </span></span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.004796086          0.001013916          0.001100521 </span></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           SV_03km_LM        MW_SR_500m_RM        MW_SR_01km_RM </span></span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -0.001435868         10.086252358         10.150075094 </span></span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        MW_SR_03km_RM        MW_SR_500m_LM        MW_SR_01km_LM </span></span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          9.535939066         13.782126361         12.858486067 </span></span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        MW_SR_03km_LM     MW_SR_VM_500m_RM     MW_SR_VM_01km_RM </span></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          8.457941382         10.107849533         10.225339777 </span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     MW_SR_VM_03km_RM     MW_SR_VM_500m_LM     MW_SR_VM_01km_LM </span></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         10.535820052         13.764654240         12.837090856 </span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     MW_SR_VM_03km_LM       SV_FRA_500m_RM       SV_FRA_01km_RM </span></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          8.834244774          0.998219354          0.987136746 </span></span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       SV_FRA_03km_RM       SV_FRA_500m_LM       SV_FRA_01km_LM </span></span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.956008752          0.259238846          0.280009490 </span></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       SV_FRA_03km_LM         Bunkers_RM_A         Bunkers_RM_M </span></span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -0.286213018        209.404566875          7.793284819 </span></span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         Bunkers_LM_A         Bunkers_LM_M         Bunkers_MW_A </span></span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        122.058537262         13.182518634        151.949436108 </span></span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         Bunkers_MW_M   Corfidi_downwind_A   Corfidi_downwind_M </span></span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          7.810700539        218.695496108         14.698235841 </span></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     Corfidi_upwind_A     Corfidi_upwind_M              K_Index </span></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        231.328321825          9.179441145         24.354838710 </span></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Showalter_Index    TotalTotals_Index          SWEAT_Index </span></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          3.750147453         44.354838710        106.416793661 </span></span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;              STP_fix              STP_new           STP_fix_LM </span></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.359981513          0.200492750          0.127176069 </span></span>
-<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           STP_new_LM              SCP_fix              SCP_new </span></span>
-<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.070831081          6.233760868          4.924259548 </span></span>
-<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;           SCP_fix_LM           SCP_new_LM                 SHIP </span></span>
-<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         -0.536673003         -0.423936243          0.628661858 </span></span>
-<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  HSI                  DCP         MU_WMAXSHEAR </span></span>
-<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          1.715903102          1.150670745       1213.184834430 </span></span>
-<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;         SB_WMAXSHEAR         ML_WMAXSHEAR     MU_EFF_WMAXSHEAR </span></span>
-<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       1213.184834430       1033.105080761        958.335927637 </span></span>
-<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     SB_EFF_WMAXSHEAR     ML_EFF_WMAXSHEAR             EHI_500m </span></span>
-<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;        958.335927637        797.354807442          0.279777567 </span></span>
-<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;             EHI_01km             EHI_03km          EHI_500m_LM </span></span>
-<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.562298052          2.163834321          0.098841218 </span></span>
-<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          EHI_01km_LM          EHI_03km_LM              SHERBS3 </span></span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.198651467         -0.186287458          0.648168875 </span></span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;               SHERBE           SHERBS3_v2            SHERBE_v2 </span></span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          0.701454223          0.864225167          0.935272297 </span></span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;                  DEI              DEI_eff                  TIP </span></span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;          1.519761039          1.188457460          2.435630415</span></span></code></pre></div>
+<p>Compute convective parameters based on a sample vertical profile
+data:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>pressure <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">855</span>, <span class="dv">700</span>, <span class="dv">500</span>, <span class="dv">300</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># pressure [hPa]</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>altitude <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1500</span>, <span class="dv">2500</span>, <span class="dv">6000</span>, <span class="dv">8500</span>, <span class="dv">12000</span>, <span class="dv">25000</span>) <span class="co"># altitude [meters]</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>temp <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">15</span>, <span class="sc">-</span><span class="dv">30</span>, <span class="sc">-</span><span class="dv">50</span>, <span class="sc">-</span><span class="dv">92</span>) <span class="co"># temperature [degree Celsius]</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>dpt <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">-</span><span class="dv">30</span>, <span class="sc">-</span><span class="dv">55</span>, <span class="sc">-</span><span class="dv">80</span>, <span class="sc">-</span><span class="dv">99</span>) <span class="co"># dew point temperature [degree Celsius]</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>wd <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">90</span>, <span class="dv">135</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">350</span>, <span class="dv">0</span>) <span class="co"># wind direction [azimuth in degress]</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>ws <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">5</span>, <span class="dv">0</span>) <span class="co"># wind speed [knots]</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>accuracy <span class="ot">=</span> <span class="dv">2</span> <span class="co"># accuracy of computations where 3 = high (slow), 2 = medium (recommended), 1 = low (fast)</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="fu">sounding_compute</span>(pressure, altitude, temp, dpt, wd, ws, accuracy)</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;              MU_CAPE          MU_CAPE_M10       MU_CAPE_M10_PT </span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt;       2269.925733301        998.144308627        313.074714966 </span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt;         MU_02km_CAPE         MU_03km_CAPE          MU_HGL_CAPE </span></span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt;        247.979380820        575.629305978       1616.538411895 </span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt;               MU_CIN           MU_LCL_HGT           MU_LFC_HGT </span></span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;          0.000000000        730.000000000        730.000000000 </span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt;            MU_EL_HGT                MU_LI            MU_LI_M10 </span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt;       8300.000000000        -10.111930240        -10.853947310 </span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt;              MU_WMAX           MU_EL_TEMP          MU_LCL_TEMP </span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt;         67.378419888        -28.800000000         17.700000000 </span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt;          MU_LFC_TEMP              MU_MIXR          MU_CAPE_500 </span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt;         17.700000000         14.875917910       1076.032178138 </span></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="co">#&gt;      MU_CAPE_500_M10   MU_CAPE_500_M10_PT           MU_CIN_500 </span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co">#&gt;        389.365140754        137.081449189          0.000000000 </span></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="co">#&gt;            MU_LI_500        MU_LI_500_M10              SB_CAPE </span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt;         -5.041702392         -6.234631722       2269.925733301 </span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt;          SB_CAPE_M10       SB_CAPE_M10_PT         SB_02km_CAPE </span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt;        998.144308627        313.074714966        247.979380820 </span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt;         SB_03km_CAPE          SB_HGL_CAPE               SB_CIN </span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt;        575.629305978       1616.538411895          0.000000000 </span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt;           SB_LCL_HGT           SB_LFC_HGT            SB_EL_HGT </span></span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a><span class="co">#&gt;        730.000000000        730.000000000       8300.000000000 </span></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="co">#&gt;                SB_LI            SB_LI_M10              SB_WMAX </span></span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt;        -10.111930240        -10.853947310         67.378419888 </span></span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt;           SB_EL_TEMP          SB_LCL_TEMP          SB_LFC_TEMP </span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt;        -28.800000000         17.700000000         17.700000000 </span></span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt;              SB_MIXR              ML_CAPE          ML_CAPE_M10 </span></span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a><span class="co">#&gt;         14.875917910       1646.063927273        670.100095437 </span></span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a><span class="co">#&gt;       ML_CAPE_M10_PT         ML_02km_CAPE         ML_03km_CAPE </span></span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a><span class="co">#&gt;        225.281641180        164.079828657        422.429000173 </span></span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a><span class="co">#&gt;          ML_HGL_CAPE               ML_CIN           ML_LCL_HGT </span></span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a><span class="co">#&gt;       1250.022127396          0.000000000        975.000000000 </span></span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a><span class="co">#&gt;           ML_LFC_HGT            ML_EL_HGT                ML_LI </span></span>
+<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a><span class="co">#&gt;        975.000000000       7900.000000000         -7.620329500 </span></span>
+<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a><span class="co">#&gt;            ML_LI_M10              ML_WMAX           ML_EL_TEMP </span></span>
+<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a><span class="co">#&gt;         -8.584526572         57.377067323        -26.400000000 </span></span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a><span class="co">#&gt;          ML_LCL_TEMP          ML_LFC_TEMP              ML_MIXR </span></span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a><span class="co">#&gt;         15.250000000         15.250000000         13.048747763 </span></span>
+<span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a><span class="co">#&gt;             LR_0500m              LR_01km              LR_02km </span></span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a><span class="co">#&gt;        -10.000000000        -10.000000000        -10.000000000 </span></span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a><span class="co">#&gt;              LR_03km              LR_04km              LR_06km </span></span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a><span class="co">#&gt;         -9.047619048         -7.857142857         -6.666666667 </span></span>
+<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a><span class="co">#&gt;              LR_16km              LR_26km              LR_24km </span></span>
+<span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a><span class="co">#&gt;         -6.000000000         -5.000000000         -5.767195767 </span></span>
+<span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a><span class="co">#&gt;              LR_36km          LR_26km_MAX         LR_500700hPa </span></span>
+<span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a><span class="co">#&gt;         -4.285714286         -5.714285714         -4.285714286 </span></span>
+<span id="cb3-55"><a href="#cb3-55" tabindex="-1"></a><span class="co">#&gt;         LR_500800hPa         LR_600800hPa             FRZG_HGT </span></span>
+<span id="cb3-56"><a href="#cb3-56" tabindex="-1"></a><span class="co">#&gt;         -5.180722892         -5.833333333       2500.000000000 </span></span>
+<span id="cb3-57"><a href="#cb3-57" tabindex="-1"></a><span class="co">#&gt;     FRZG_wetbulb_HGT  HGT_max_thetae_03km  HGT_min_thetae_04km </span></span>
+<span id="cb3-58"><a href="#cb3-58" tabindex="-1"></a><span class="co">#&gt;       2275.000000000          0.000000000       3750.000000000 </span></span>
+<span id="cb3-59"><a href="#cb3-59" tabindex="-1"></a><span class="co">#&gt;         Delta_thetae Delta_thetae_min04km          Thetae_01km </span></span>
+<span id="cb3-60"><a href="#cb3-60" tabindex="-1"></a><span class="co">#&gt;         28.069785504         28.834554624        330.532272184 </span></span>
+<span id="cb3-61"><a href="#cb3-61" tabindex="-1"></a><span class="co">#&gt;          Thetae_02km                DCAPE   Cold_Pool_Strength </span></span>
+<span id="cb3-62"><a href="#cb3-62" tabindex="-1"></a><span class="co">#&gt;        323.619051941        598.310049405         12.632184321 </span></span>
+<span id="cb3-63"><a href="#cb3-63" tabindex="-1"></a><span class="co">#&gt;           Wind_Index           PRCP_WATER   Moisture_Flux_02km </span></span>
+<span id="cb3-64"><a href="#cb3-64" tabindex="-1"></a><span class="co">#&gt;         33.906407176         27.104631918         30.425480722 </span></span>
+<span id="cb3-65"><a href="#cb3-65" tabindex="-1"></a><span class="co">#&gt;              RH_01km              RH_02km              RH_14km </span></span>
+<span id="cb3-66"><a href="#cb3-66" tabindex="-1"></a><span class="co">#&gt;          0.729103473          0.719706866          0.645204350 </span></span>
+<span id="cb3-67"><a href="#cb3-67" tabindex="-1"></a><span class="co">#&gt;              RH_25km              RH_36km               RH_HGL </span></span>
+<span id="cb3-68"><a href="#cb3-68" tabindex="-1"></a><span class="co">#&gt;          0.555017886          0.443603638          0.460317694 </span></span>
+<span id="cb3-69"><a href="#cb3-69" tabindex="-1"></a><span class="co">#&gt;             BS_0500m              BS_01km              BS_02km </span></span>
+<span id="cb3-70"><a href="#cb3-70" tabindex="-1"></a><span class="co">#&gt;          1.917219591          3.834439182          8.782108409 </span></span>
+<span id="cb3-71"><a href="#cb3-71" tabindex="-1"></a><span class="co">#&gt;              BS_03km              BS_06km              BS_08km </span></span>
+<span id="cb3-72"><a href="#cb3-72" tabindex="-1"></a><span class="co">#&gt;         12.655968060         18.005540000         17.407678201 </span></span>
+<span id="cb3-73"><a href="#cb3-73" tabindex="-1"></a><span class="co">#&gt;              BS_36km              BS_26km              BS_16km </span></span>
+<span id="cb3-74"><a href="#cb3-74" tabindex="-1"></a><span class="co">#&gt;          9.369289559         13.330420492         16.647826116 </span></span>
+<span id="cb3-75"><a href="#cb3-75" tabindex="-1"></a><span class="co">#&gt;              BS_18km            BS_EFF_MU            BS_EFF_SB </span></span>
+<span id="cb3-76"><a href="#cb3-76" tabindex="-1"></a><span class="co">#&gt;         20.279072460         14.223187917         14.223187917 </span></span>
+<span id="cb3-77"><a href="#cb3-77" tabindex="-1"></a><span class="co">#&gt;            BS_EFF_ML        BS_SFC_to_M10        BS_1km_to_M10 </span></span>
+<span id="cb3-78"><a href="#cb3-78" tabindex="-1"></a><span class="co">#&gt;         13.896750821         15.510376997         13.649859352 </span></span>
+<span id="cb3-79"><a href="#cb3-79" tabindex="-1"></a><span class="co">#&gt;        BS_2km_to_M10     BS_MU_LFC_to_M10     BS_SB_LFC_to_M10 </span></span>
+<span id="cb3-80"><a href="#cb3-80" tabindex="-1"></a><span class="co">#&gt;          9.883032095         14.073701016         14.073701016 </span></span>
+<span id="cb3-81"><a href="#cb3-81" tabindex="-1"></a><span class="co">#&gt;     BS_ML_LFC_to_M10        BS_MW02_to_SM        BS_MW02_to_RM </span></span>
+<span id="cb3-82"><a href="#cb3-82" tabindex="-1"></a><span class="co">#&gt;         13.686365658          7.304027597       1410.166307563 </span></span>
+<span id="cb3-83"><a href="#cb3-83" tabindex="-1"></a><span class="co">#&gt;        BS_MW02_to_LM         BS_HGL_to_SM         BS_HGL_to_RM </span></span>
+<span id="cb3-84"><a href="#cb3-84" tabindex="-1"></a><span class="co">#&gt;       1410.166307563          4.893411960       1419.400993508 </span></span>
+<span id="cb3-85"><a href="#cb3-85" tabindex="-1"></a><span class="co">#&gt;         BS_HGL_to_LM             MW_0500m              MW_01km </span></span>
+<span id="cb3-86"><a href="#cb3-86" tabindex="-1"></a><span class="co">#&gt;       1419.400993508          2.308638103          2.425112273 </span></span>
+<span id="cb3-87"><a href="#cb3-87" tabindex="-1"></a><span class="co">#&gt;              MW_02km              MW_03km              MW_06km </span></span>
+<span id="cb3-88"><a href="#cb3-88" tabindex="-1"></a><span class="co">#&gt;          3.347646594          4.800331697          7.810700539 </span></span>
+<span id="cb3-89"><a href="#cb3-89" tabindex="-1"></a><span class="co">#&gt;              MW_13km          SRH_100m_RM          SRH_250m_RM </span></span>
+<span id="cb3-90"><a href="#cb3-90" tabindex="-1"></a><span class="co">#&gt;          6.838886565       -564.352118627      -1333.923189481 </span></span>
+<span id="cb3-91"><a href="#cb3-91" tabindex="-1"></a><span class="co">#&gt;          SRH_500m_RM           SRH_1km_RM           SRH_3km_RM </span></span>
+<span id="cb3-92"><a href="#cb3-92" tabindex="-1"></a><span class="co">#&gt;      -2616.541640905      -5258.735650838     -17176.029039684 </span></span>
+<span id="cb3-93"><a href="#cb3-93" tabindex="-1"></a><span class="co">#&gt;          SRH_36km_RM          SRH_100m_LM          SRH_250m_LM </span></span>
+<span id="cb3-94"><a href="#cb3-94" tabindex="-1"></a><span class="co">#&gt;     -16372.885610568       -564.352118627      -1333.923189481 </span></span>
+<span id="cb3-95"><a href="#cb3-95" tabindex="-1"></a><span class="co">#&gt;          SRH_500m_LM           SRH_1km_LM           SRH_3km_LM </span></span>
+<span id="cb3-96"><a href="#cb3-96" tabindex="-1"></a><span class="co">#&gt;      -2616.541640905      -5258.735650838     -17176.029039684 </span></span>
+<span id="cb3-97"><a href="#cb3-97" tabindex="-1"></a><span class="co">#&gt;          SRH_36km_LM           SV_500m_RM           SV_01km_RM </span></span>
+<span id="cb3-98"><a href="#cb3-98" tabindex="-1"></a><span class="co">#&gt;     -16372.885610568         -0.003709639         -0.003728649 </span></span>
+<span id="cb3-99"><a href="#cb3-99" tabindex="-1"></a><span class="co">#&gt;           SV_03km_RM           SV_500m_LM           SV_01km_LM </span></span>
+<span id="cb3-100"><a href="#cb3-100" tabindex="-1"></a><span class="co">#&gt;         -0.004058794         -0.003709639         -0.003728649 </span></span>
+<span id="cb3-101"><a href="#cb3-101" tabindex="-1"></a><span class="co">#&gt;           SV_03km_LM        MW_SR_500m_RM        MW_SR_01km_RM </span></span>
+<span id="cb3-102"><a href="#cb3-102" tabindex="-1"></a><span class="co">#&gt;         -0.004058794       1410.677668707       1410.374236538 </span></span>
+<span id="cb3-103"><a href="#cb3-103" tabindex="-1"></a><span class="co">#&gt;        MW_SR_03km_RM        MW_SR_500m_LM        MW_SR_01km_LM </span></span>
+<span id="cb3-104"><a href="#cb3-104" tabindex="-1"></a><span class="co">#&gt;       1411.079647471       1410.677668707       1410.374236538 </span></span>
+<span id="cb3-105"><a href="#cb3-105" tabindex="-1"></a><span class="co">#&gt;        MW_SR_03km_LM     MW_SR_VM_500m_RM     MW_SR_VM_01km_RM </span></span>
+<span id="cb3-106"><a href="#cb3-106" tabindex="-1"></a><span class="co">#&gt;       1411.079647471       1410.671731059       1410.366170618 </span></span>
+<span id="cb3-107"><a href="#cb3-107" tabindex="-1"></a><span class="co">#&gt;     MW_SR_VM_03km_RM     MW_SR_VM_500m_LM     MW_SR_VM_01km_LM </span></span>
+<span id="cb3-108"><a href="#cb3-108" tabindex="-1"></a><span class="co">#&gt;       1411.104774484       1410.671731059       1410.366170618 </span></span>
+<span id="cb3-109"><a href="#cb3-109" tabindex="-1"></a><span class="co">#&gt;     MW_SR_VM_03km_LM       SV_FRA_500m_RM       SV_FRA_01km_RM </span></span>
+<span id="cb3-110"><a href="#cb3-110" tabindex="-1"></a><span class="co">#&gt;       1411.104774484         -0.948483270         -0.948693278 </span></span>
+<span id="cb3-111"><a href="#cb3-111" tabindex="-1"></a><span class="co">#&gt;       SV_FRA_03km_RM       SV_FRA_500m_LM       SV_FRA_01km_LM </span></span>
+<span id="cb3-112"><a href="#cb3-112" tabindex="-1"></a><span class="co">#&gt;         -0.809043579         -0.948483270         -0.948693278 </span></span>
+<span id="cb3-113"><a href="#cb3-113" tabindex="-1"></a><span class="co">#&gt;       SV_FRA_03km_LM         Bunkers_RM_A         Bunkers_RM_M </span></span>
+<span id="cb3-114"><a href="#cb3-114" tabindex="-1"></a><span class="co">#&gt;         -0.809043579         45.000000000       1412.799348811 </span></span>
+<span id="cb3-115"><a href="#cb3-115" tabindex="-1"></a><span class="co">#&gt;         Bunkers_LM_A         Bunkers_LM_M         Bunkers_MW_A </span></span>
+<span id="cb3-116"><a href="#cb3-116" tabindex="-1"></a><span class="co">#&gt;         45.000000000       1412.799348811        151.949436108 </span></span>
+<span id="cb3-117"><a href="#cb3-117" tabindex="-1"></a><span class="co">#&gt;         Bunkers_MW_M   Corfidi_downwind_A   Corfidi_downwind_M </span></span>
+<span id="cb3-118"><a href="#cb3-118" tabindex="-1"></a><span class="co">#&gt;          7.810700539        218.695496108         14.698235841 </span></span>
+<span id="cb3-119"><a href="#cb3-119" tabindex="-1"></a><span class="co">#&gt;     Corfidi_upwind_A     Corfidi_upwind_M              K_Index </span></span>
+<span id="cb3-120"><a href="#cb3-120" tabindex="-1"></a><span class="co">#&gt;        231.328321825          9.179441145         24.354838710 </span></span>
+<span id="cb3-121"><a href="#cb3-121" tabindex="-1"></a><span class="co">#&gt;      Showalter_Index    TotalTotals_Index          SWEAT_Index </span></span>
+<span id="cb3-122"><a href="#cb3-122" tabindex="-1"></a><span class="co">#&gt;          3.750147453         44.354838710        106.416793661 </span></span>
+<span id="cb3-123"><a href="#cb3-123" tabindex="-1"></a><span class="co">#&gt;              STP_fix              STP_new           STP_fix_LM </span></span>
+<span id="cb3-124"><a href="#cb3-124" tabindex="-1"></a><span class="co">#&gt;        -47.762453213        -26.601437179        -47.762453213 </span></span>
+<span id="cb3-125"><a href="#cb3-125" tabindex="-1"></a><span class="co">#&gt;           STP_new_LM              SCP_fix              SCP_new </span></span>
+<span id="cb3-126"><a href="#cb3-126" tabindex="-1"></a><span class="co">#&gt;        -26.601437179       -702.005580875       -554.538064161 </span></span>
+<span id="cb3-127"><a href="#cb3-127" tabindex="-1"></a><span class="co">#&gt;           SCP_fix_LM           SCP_new_LM                 SHIP </span></span>
+<span id="cb3-128"><a href="#cb3-128" tabindex="-1"></a><span class="co">#&gt;       -702.005580875       -554.538064161          0.628661858 </span></span>
+<span id="cb3-129"><a href="#cb3-129" tabindex="-1"></a><span class="co">#&gt;                  HSI                  DCP         MU_WMAXSHEAR </span></span>
+<span id="cb3-130"><a href="#cb3-130" tabindex="-1"></a><span class="co">#&gt;          1.715903102          1.150670745       1213.184834430 </span></span>
+<span id="cb3-131"><a href="#cb3-131" tabindex="-1"></a><span class="co">#&gt;         SB_WMAXSHEAR         ML_WMAXSHEAR     MU_EFF_WMAXSHEAR </span></span>
+<span id="cb3-132"><a href="#cb3-132" tabindex="-1"></a><span class="co">#&gt;       1213.184834430       1033.105080761        958.335927637 </span></span>
+<span id="cb3-133"><a href="#cb3-133" tabindex="-1"></a><span class="co">#&gt;     SB_EFF_WMAXSHEAR     ML_EFF_WMAXSHEAR             EHI_500m </span></span>
+<span id="cb3-134"><a href="#cb3-134" tabindex="-1"></a><span class="co">#&gt;        958.335927637        797.354807442        -37.120970018 </span></span>
+<span id="cb3-135"><a href="#cb3-135" tabindex="-1"></a><span class="co">#&gt;             EHI_01km             EHI_03km          EHI_500m_LM </span></span>
+<span id="cb3-136"><a href="#cb3-136" tabindex="-1"></a><span class="co">#&gt;        -74.605871115       -243.676939457        -37.120970018 </span></span>
+<span id="cb3-137"><a href="#cb3-137" tabindex="-1"></a><span class="co">#&gt;          EHI_01km_LM          EHI_03km_LM              SHERBS3 </span></span>
+<span id="cb3-138"><a href="#cb3-138" tabindex="-1"></a><span class="co">#&gt;        -74.605871115       -243.676939457          0.648168875 </span></span>
+<span id="cb3-139"><a href="#cb3-139" tabindex="-1"></a><span class="co">#&gt;               SHERBE           SHERBS3_v2            SHERBE_v2 </span></span>
+<span id="cb3-140"><a href="#cb3-140" tabindex="-1"></a><span class="co">#&gt;          0.701454223          0.864225167          0.935272297 </span></span>
+<span id="cb3-141"><a href="#cb3-141" tabindex="-1"></a><span class="co">#&gt;                  DEI              DEI_eff                  TIP </span></span>
+<span id="cb3-142"><a href="#cb3-142" tabindex="-1"></a><span class="co">#&gt;          1.519761039          1.188457460        -90.832654459</span></span></code></pre></div>
 </div>
 <div id="example-4" class="section level3">
 <h3>Example 4</h3>
 <p>Download sounding and draw hodograph:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;northplatte&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sounding_hodograph</span>(<span class="at">ws =</span> northplatte<span class="sc">$</span>ws, <span class="at">wd =</span> northplatte<span class="sc">$</span>wd, </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">altitude =</span> northplatte<span class="sc">$</span>altitude,<span class="at">max_speed =</span> <span class="dv">40</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;North Platte - 03.07.1999, 00:00 UTC&quot;</span>)</span></code></pre></div>
-<p><img src="getstarted_files/figure-html/example4-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;northplatte&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">sounding_hodograph</span>(<span class="at">ws =</span> northplatte<span class="sc">$</span>ws, <span class="at">wd =</span> northplatte<span class="sc">$</span>wd, </span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>                   <span class="at">altitude =</span> northplatte<span class="sc">$</span>altitude,<span class="at">max_speed =</span> <span class="dv">40</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="fu">title</span>(<span class="st">&quot;North Platte - 03.07.1999, 00:00 UTC&quot;</span>)</span></code></pre></div>
+<p><img
+src="getstarted_files/figure-html/example4-1.png" /><!-- --></p>
 </div>
 <div id="example-5---thunder-in-python" class="section level3">
 <h3>Example 5 - thunder in Python</h3>
-<p>It is possible to launch <code>thunder</code> under Python via <code>rpy2</code> library. Below you can find the minimum reproducible example. Make sure that <code>pandas</code> and <code>rpy2</code> libraries are available for your Python environment. If not install required python packages with <code>pip install pandas</code> and <code>pip install rpy2</code></p>
-<p>Launch <code>thunder</code> under Python with <code>rpy2</code> and <code>numpy</code>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### load required packages</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; from rpy2.robjects.packages import importr</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; from rpy2.robjects import r,pandas2ri</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; import rpy2.robjects as robjects</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; pandas2ri.activate()</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">### load thunder package (make sure that it was installed in R before)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; importr(&#39;thunder&#39;)</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="do">### download North Platte sounding </span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; profile = robjects.r[&#39;get_sounding&#39;](wmo_id = 72562, yy = 1999, mm = 7, dd = 3,hh = 0)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="do">### compute convective parameters</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; parameters = robjects.r[&#39;sounding_compute&#39;](profile[&#39;pressure&#39;], profile[&#39;altitude&#39;], #&gt; profile[&#39;temp&#39;], profile[&#39;dpt&#39;], profile[&#39;wd&#39;], profile[&#39;ws&#39;], accuracy = 2)</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="do">### customize output and print all computed variables, e.g. most-unstable CAPE (first element) equals 9413 J/kg</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; print(list(map(&#39;{:.2f}&#39;.format, parameters)))</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;9413.29&#39;, &#39;233.35&#39;, &#39;1713.74&#39;, &#39;0.00&#39;, &#39;775.00&#39;, &#39;775.00&#39;, &#39;15500.00&#39;, &#39;-16.55&#39;, </span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;137.21&#39;, &#39;-66.63&#39;, &#39;23.98&#39;, &#39;23.98&#39;, &#39;23.36&#39;, &#39;9413.29&#39;, &#39;233.35&#39;, &#39;1713.74&#39;, &#39;0.00&#39;, </span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;775.00&#39;, &#39;775.00&#39;, &#39;15500.00&#39;, &#39;-16.55&#39;, &#39;137.21&#39;, &#39;-66.63&#39;, &#39;23.98&#39;, &#39;23.98&#39;, &#39;23.36&#39;,</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;7805.13&#39;, &#39;115.22&#39;, &#39;1515.81&#39;, &#39;-4.35&#39;, &#39;950.00&#39;, &#39;950.00&#39;, &#39;15000.00&#39;, &#39;-14.66&#39;, </span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;124.94&#39;, &#39;-68.41&#39;, &#39;22.46&#39;, &#39;22.46&#39;, &#39;21.17&#39;, &#39;-9.57&#39;, &#39;-6.68&#39;, &#39;-8.80&#39;, &#39;-8.68&#39;, </span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;-9.06&#39;, &#39;-7.70&#39;, &#39;4250.00&#39;, &#39;3500.00&#39;, &#39;0.00&#39;, &#39;2866.00&#39;, &#39;50.57&#39;, &#39;52.93&#39;, &#39;1381.81&#39;, </span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;308.98&#39;, &#39;29.00&#39;, &#39;37.59&#39;, &#39;87.03&#39;, &#39;0.58&#39;, &#39;0.40&#39;, &#39;0.47&#39;, &#39;8.85&#39;, &#39;11.21&#39;, &#39;13.88&#39;, </span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;20.28&#39;, &#39;29.33&#39;, &#39;6.84&#39;, &#39;21.70&#39;, &#39;28.32&#39;, &#39;28.32&#39;, &#39;27.17&#39;, &#39;17.06&#39;, &#39;12.53&#39;, &#39;12.53&#39;,</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;11.74&#39;, &#39;7.09&#39;, &#39;6.08&#39;, &#39;7.77&#39;, &#39;7.69&#39;, &#39;19.89&#39;, &#39;62.07&#39;, &#39;110.06&#39;, &#39;156.48&#39;, &#39;6.25&#39;, </span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;7.77&#39;, &#39;4.26&#39;, &#39;-42.78&#39;, &#39;284.67&#39;, &#39;5.65&#39;, &#39;197.60&#39;, &#39;14.19&#39;, &#39;218.89&#39;, &#39;7.77&#39;,</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;31.50&#39;, &#39;-12.14&#39;, &#39;60.40&#39;, &#39;677.12&#39;, &#39;4.67&#39;, &#39;6.10&#39;, &#39;29.46&#39;, &#39;29.46&#39;, &#39;3.86&#39;, &#39;12.35&#39;,</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;2783.07&#39;, &#39;2783.07&#39;, &#39;2534.22&#39;, &#39;3886.07&#39;, &#39;3886.07&#39;, &#39;3395.00&#39;]</span></span></code></pre></div>
+<p>It is possible to launch <code>thunder</code> under Python via
+<code>rpy2</code> library. Below you can find the minimum reproducible
+example. Make sure that <code>pandas</code> and <code>rpy2</code>
+libraries are available for your Python environment. If not install
+required python packages with <code>pip install pandas</code> and
+<code>pip install rpy2</code></p>
+<p>Launch <code>thunder</code> under Python with <code>rpy2</code> and
+<code>numpy</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="do">### load required packages</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; from rpy2.robjects.packages import importr</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; from rpy2.robjects import r,pandas2ri</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; import rpy2.robjects as robjects</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; pandas2ri.activate()</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="do">### load thunder package (make sure that it was installed in R before)</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; importr(&#39;thunder&#39;)</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="do">### download North Platte sounding </span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; profile = robjects.r[&#39;get_sounding&#39;](wmo_id = 72562, yy = 1999, mm = 7, dd = 3,hh = 0)</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="do">### compute convective parameters</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; parameters = robjects.r[&#39;sounding_compute&#39;](profile[&#39;pressure&#39;], profile[&#39;altitude&#39;], #&gt; profile[&#39;temp&#39;], profile[&#39;dpt&#39;], profile[&#39;wd&#39;], profile[&#39;ws&#39;], accuracy = 2)</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="do">### customize output and print all computed variables, e.g. most-unstable CAPE (first element) equals 9413 J/kg</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; print(list(map(&#39;{:.2f}&#39;.format, parameters)))</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="co"># &#39;9413.29&#39;, &#39;233.35&#39;, &#39;1713.74&#39;, &#39;0.00&#39;, &#39;775.00&#39;, &#39;775.00&#39;, &#39;15500.00&#39;, &#39;-16.55&#39;, </span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="co"># &#39;137.21&#39;, &#39;-66.63&#39;, &#39;23.98&#39;, &#39;23.98&#39;, &#39;23.36&#39;, &#39;9413.29&#39;, &#39;233.35&#39;, &#39;1713.74&#39;, &#39;0.00&#39;, </span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="co"># &#39;775.00&#39;, &#39;775.00&#39;, &#39;15500.00&#39;, &#39;-16.55&#39;, &#39;137.21&#39;, &#39;-66.63&#39;, &#39;23.98&#39;, &#39;23.98&#39;, &#39;23.36&#39;,</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="co"># &#39;7805.13&#39;, &#39;115.22&#39;, &#39;1515.81&#39;, &#39;-4.35&#39;, &#39;950.00&#39;, &#39;950.00&#39;, &#39;15000.00&#39;, &#39;-14.66&#39;, </span></span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="co"># &#39;124.94&#39;, &#39;-68.41&#39;, &#39;22.46&#39;, &#39;22.46&#39;, &#39;21.17&#39;, &#39;-9.57&#39;, &#39;-6.68&#39;, &#39;-8.80&#39;, &#39;-8.68&#39;, </span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="co"># &#39;-9.06&#39;, &#39;-7.70&#39;, &#39;4250.00&#39;, &#39;3500.00&#39;, &#39;0.00&#39;, &#39;2866.00&#39;, &#39;50.57&#39;, &#39;52.93&#39;, &#39;1381.81&#39;, </span></span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="co"># &#39;308.98&#39;, &#39;29.00&#39;, &#39;37.59&#39;, &#39;87.03&#39;, &#39;0.58&#39;, &#39;0.40&#39;, &#39;0.47&#39;, &#39;8.85&#39;, &#39;11.21&#39;, &#39;13.88&#39;, </span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="co"># &#39;20.28&#39;, &#39;29.33&#39;, &#39;6.84&#39;, &#39;21.70&#39;, &#39;28.32&#39;, &#39;28.32&#39;, &#39;27.17&#39;, &#39;17.06&#39;, &#39;12.53&#39;, &#39;12.53&#39;,</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="co"># &#39;11.74&#39;, &#39;7.09&#39;, &#39;6.08&#39;, &#39;7.77&#39;, &#39;7.69&#39;, &#39;19.89&#39;, &#39;62.07&#39;, &#39;110.06&#39;, &#39;156.48&#39;, &#39;6.25&#39;, </span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="co"># &#39;7.77&#39;, &#39;4.26&#39;, &#39;-42.78&#39;, &#39;284.67&#39;, &#39;5.65&#39;, &#39;197.60&#39;, &#39;14.19&#39;, &#39;218.89&#39;, &#39;7.77&#39;,</span></span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="co"># &#39;31.50&#39;, &#39;-12.14&#39;, &#39;60.40&#39;, &#39;677.12&#39;, &#39;4.67&#39;, &#39;6.10&#39;, &#39;29.46&#39;, &#39;29.46&#39;, &#39;3.86&#39;, &#39;12.35&#39;,</span></span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="co"># &#39;2783.07&#39;, &#39;2783.07&#39;, &#39;2534.22&#39;, &#39;3886.07&#39;, &#39;3886.07&#39;, &#39;3395.00&#39;]</span></span></code></pre></div>
 </div>
 <div id="important-notes" class="section level3">
 <h3>Important notes</h3>
 <ul>
 <li>Remember to always input wind speed data in knots.</li>
-<li>Script will always consider first height level as the surface (h = 0), therefore input height data can be as above sea level (ASL) or above ground level (AGL).</li>
-<li>For efficiency purposes it is highly recommended to input data for a maximum of 16-18 km AGL or lower.</li>
-<li>Values of parameters will be different for different accuracy settings.</li>
+<li>Script will always consider first height level as the surface (h =
+0), therefore input height data can be as above sea level (ASL) or above
+ground level (AGL).</li>
+<li>For efficiency purposes it is highly recommended to input data for a
+maximum of 16-18 km AGL or lower.</li>
+<li>Values of parameters will be different for different accuracy
+settings.</li>
 </ul>
 </div>
 </div>
